@@ -1,38 +1,32 @@
 package com.seniorglez.calc;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+
+
+//useful example https://examples.javacodegeeks.com/enterprise-java/maven/junit-maven-example/
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AppTest {
+    private static Calculator calculator;
+
+    @BeforeClass
+    public static void instanceCalculator(){//idk if static test are ok
+      calculator=Calculator.getCalculatorInstance();
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Before
+    public void beforeEachTest(){
+        System.out.println("Text starting");
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @After
+    public void afterEachTest(){
+        System.out.println("Test end");
+    }
+    @Test
+    public void hi(){
+        System.out.println("example");
     }
 }
