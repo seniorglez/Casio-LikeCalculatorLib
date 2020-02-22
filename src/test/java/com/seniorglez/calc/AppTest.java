@@ -31,7 +31,7 @@ public class AppTest {
     public void afterEachTest(){
         System.out.println("Test end");
     }
-    
+
     @Test
     public void testScientificNotationPositiveExpected(){
         int max = Integer.MAX_VALUE;

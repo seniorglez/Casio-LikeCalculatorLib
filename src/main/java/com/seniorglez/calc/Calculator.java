@@ -20,8 +20,7 @@ public class Calculator {
     }
 
     public String formatScientificNotation(double d){
-        NumberFormat formatter = new DecimalFormat();
-        formatter = new DecimalFormat("0.######E0");
+        NumberFormat formatter = new DecimalFormat("0.######E0");
         return formatter.format(d);
     }
 
