@@ -10,12 +10,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AppTest {
-    private static Calculator calculator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+public class AppTest {
+    private Calculator calculator;
+
+    public AppTest(){
+        calculator=Calculator.getCalculatorInstance();
+    }
     @BeforeClass
     public static void instanceCalculator(){//idk if static test are ok
-      calculator=Calculator.getCalculatorInstance();
+      System.out.println("Starting tests");
     }
     @Before
     public void beforeEachTest(){
@@ -25,8 +31,15 @@ public class AppTest {
     public void afterEachTest(){
         System.out.println("Test end");
     }
+    
     @Test
-    public void hi(){
-        System.out.println("example");
+    public void testScientificNotationPositiveExpected(){
+        int max = Integer.MAX_VALUE;
+        assertTrue(calculator.formatScientificNotation(max).equals("2.147484E9"));
+    }
+    @Test
+    public void  testScientificNotationNegativeExpected(){
+        int min = Integer.MIN_VALUE;
+        assertTrue(calculator.formatScientificNotation(min).equals("-2.147484E9"));
     }
 }
