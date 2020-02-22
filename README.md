@@ -25,7 +25,7 @@ If you use ubuntu/devian-based distros:
 If you use MacOS in order to install maven you will have to install [Homebrew](https://brew.sh/)
 
 ```bash
-    
+
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ```
@@ -83,4 +83,21 @@ new test for them.
   </a>
 
 ## License
+
+### Casio-LikeCalculator
+
+Copyright (C) 2020 Diego Dominguez Gonzalez
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License 
+as published by the Free Software Foundation; eitherversion 3 of the License, or any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not check it [here](https://www.gnu.org/licenses/lgpl-3.0.txt) 
+
+![lgpl3](https://www.gnu.org/graphics/lgplv3-with-text-154x68.png)
 
