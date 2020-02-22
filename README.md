@@ -19,8 +19,8 @@ I think that everybody who works with Java already knows how to set his JAVA_HOM
 
 ```bash
     export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/bin"
-
-	export PATH=$JAVA_HOME/bin:$PATH
+    
+    export PATH=$JAVA_HOME/bin:$PATH
 
 ```
 
@@ -29,8 +29,8 @@ your JAVA_HOME like this the only think you need to do is to remove that /bin.
 
 ```bash
     export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
-
-	export PATH=$JAVA_HOME/bin:$PATH
+    
+    export PATH=$JAVA_HOME/bin:$PATH
 
 ```
 

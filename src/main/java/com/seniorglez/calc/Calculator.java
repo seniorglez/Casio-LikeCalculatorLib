@@ -25,4 +25,25 @@ public class Calculator {
     }
 
 
+    //conversions
+
+    public String convertDecimalToBinary(long decimal){
+        return Long.toBinaryString(decimal);
+    }
+
+    public long convertBinaryToDecimal(String bin){
+        return Long.parseLong(bin,2);
+    }
+
+    public String convertDecimalToHex(long decimal){
+        return Long.toHexString(decimal);
+    }
+
+    public long convertHexToDecimal(String hex){
+        return Long.parseLong(hex,16);
+    }
+
+
+
+
 }
