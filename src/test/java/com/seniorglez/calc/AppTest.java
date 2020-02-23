@@ -7,6 +7,8 @@ package com.seniorglez.calc;
 
 import org.junit.*;
 
+import javax.script.ScriptException;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -82,4 +84,14 @@ public class AppTest {
     public void testNegativeHex2Decimal(){
         assertEquals(-158L,calculator.convertHexToDecimal("-9e"));
     }
+
+    @Test
+    public void  testCalculateJSMathExpression(){
+        try {
+            assertEquals(5L,calculator.calculateJSMathExpression("3+2"));
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -1,5 +1,8 @@
 package com.seniorglez.calc;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -9,7 +12,7 @@ import java.util.regex.Pattern;
 public class Calculator {
 
     static private Calculator cal = null;
-
+    private String bracketsPattern = "\\(([^)]+)\\)";
 
     private Calculator(){
     }
@@ -19,6 +22,19 @@ public class Calculator {
         return cal;
     }
 
+
+    //Calculate
+
+    public long calculateJSMathExpression(String ex) throws ScriptException,NumberFormatException {
+        ScriptEngineManager factory = new ScriptEngineManager();
+        ScriptEngine engine = factory.getEngineByName("JavaScript");
+        String s = engine.eval(ex).toString();
+        return  Long.parseLong(s);
+    }
+
+
+
+    // formations
     public String formatScientificNotation(double d){
         NumberFormat formatter = new DecimalFormat("0.######E0");
         return formatter.format(d);
@@ -42,7 +58,6 @@ public class Calculator {
     public long convertHexToDecimal(String hex){
         return Long.parseLong(hex,16);
     }
-
 
 
 
