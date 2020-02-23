@@ -5,14 +5,10 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Calculator {
 
     static private Calculator cal = null;
-    private String bracketsPattern = "\\(([^)]+)\\)";
 
     private Calculator(){
     }
