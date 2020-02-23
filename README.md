@@ -1,7 +1,9 @@
 # Casio-LikeCalculatorLib
 
-A simple library that aims to be able to do all the stuff that a scholar calculator can do. Written on JDK8, that's why we 
-want this library to use it on android projects.
+A simple library that aims to be able to do all the stuff that a scholar calculator can do. Written on JDK8, that's because 
+we want this library to use it on android projects.
+
+If you want to get the jar file rigth now we are not distributing any binary file so package it from source please.
 
 ## Getting Started
 
