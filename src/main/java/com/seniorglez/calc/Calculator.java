@@ -6,6 +6,10 @@ import javax.script.ScriptException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+/**
+ * The entity that allows you to calculate math expressions.
+ * @author Diego Dominguez Gonzalez
+ */
 public class Calculator {
 
     static private Calculator cal = null;
@@ -13,6 +17,10 @@ public class Calculator {
     private Calculator(){
     }
 
+    /**
+     * Method to get the instance of Calculator.
+     * @return the Calculator instance.
+     */
     public static Calculator getCalculatorInstance(){
         if(cal==null) cal= new Calculator();
         return cal;
@@ -21,6 +29,13 @@ public class Calculator {
 
     //Calculate
 
+    /**
+     * Method that can calculate the result of a math expression executable by JavaScript.
+     * @param ex the math expression executable by JavaScript.
+     * @return the result of the expression.
+     * @throws ScriptException
+     * @throws NumberFormatException
+     */
     public long calculateJSMathExpression(String ex) throws ScriptException,NumberFormatException {
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("JavaScript");
@@ -31,9 +46,15 @@ public class Calculator {
 
 
     // formations
-    public String formatScientificNotation(double d){
+
+    /**
+     * A method that express a number on scientific notation.
+     * @param number the number to format.
+     * @return String with the number expressed on scientific notation.
+     */
+    public String formatScientificNotation(double number){
         NumberFormat formatter = new DecimalFormat("0.######E0");
-        return formatter.format(d);
+        return formatter.format(number);
     }
 
 
