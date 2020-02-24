@@ -98,4 +98,9 @@ public class AppTest {
         assertTrue(7.5==calculator.calculate("((4 - 2^3 + 1) * -sqrt(3*3+4*4)) / 2"));
     }
 
+    @Test
+    public void TestCalculateNumberOfDigits(){
+        assertEquals(5,calculator.calculateNumberOfDigits(12345));
+    }
+
 }

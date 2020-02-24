@@ -31,7 +31,20 @@ public class ExpressionParser {
         ch = (++pos < str.length()) ? str.charAt(pos) : -1;
     }
 
-
+    /**
+     * A method that updates pos until he reach a position that is not blank and compares it with the given char value.
+     * If returns true it will also updates pos one more time.
+     * @param charToEat the number code of the char we are looking for
+     * @return true if the character value equals to the given one or false if it not.
+     */
+    private boolean eat(int charToEat) {
+        while (ch == ' ') nextChar();
+        if (ch == charToEat) {
+            nextChar();
+            return true;
+        }
+        return false;
+    }
 
     /**
      *  A method that calculates the result of the math expression.
@@ -45,6 +58,7 @@ public class ExpressionParser {
         return x;
     }
 
+
     private double parseExpression() {
         double x = parseTerm();
         for (;;) {
@@ -53,15 +67,7 @@ public class ExpressionParser {
             else return x;
         }
     }
-    
-    private boolean eat(int charToEat) {
-        while (ch == ' ') nextChar();
-        if (ch == charToEat) {
-            nextChar();
-            return true;
-        }
-        return false;
-    }
+
 
     private double parseTerm() {
         double x = parseFactor();

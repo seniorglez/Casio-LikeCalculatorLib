@@ -43,7 +43,7 @@ public class Calculator {
         return  Long.parseLong(s);
     }
 
-    public double calculate(final String str) {//original source: https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
+    public double calculate(final String str) {
         return new ExpressionParser(str).parse();
     }
 
@@ -78,6 +78,10 @@ public class Calculator {
         return Long.parseLong(hex,16);
     }
 
+    //miss
 
+    public int calculateNumberOfDigits(int number){
+       return (int) (Math.floor(Math.log10(number)) + 1);
+    }
 
 }
