@@ -64,7 +64,7 @@ And now you can just install it
 
 ```bash
     
-    brew install wget
+    brew install maven
     
 ```
 If you are using **Windows** please find your own way, I don't work with Windows and I don't know how to install maven on it.
