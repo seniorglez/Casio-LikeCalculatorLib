@@ -1,28 +1,42 @@
 package com.seniorglez.calc;
-
+// Grammar:
+// expression = term | expression `+` term | expression `-` term
+// term = factor | term `*` factor | term `/` factor
+// factor = `+` factor | `-` factor | `(` expression `)`
+//        | number | functionName factor | factor `^` factor
 public class ExpressionParser {
 
     public ExpressionParser(String expression){
         this.str=expression;
     }
 
+    /**
+     * The position of a character.
+     */
+    private int pos;
+    /**
+     * The numeric value of a character.
+     */
+    private int ch;
 
-    int pos,ch;
-    String str;
+    /**
+     * The math expression we want to parse
+     */
+    private String str;
 
+    /**
+     * A Method that upgrades de value of the variable pos and...
+     */
     private void nextChar() {
         ch = (++pos < str.length()) ? str.charAt(pos) : -1;
     }
 
-    private boolean eat(int charToEat) {
-        while (ch == ' ') nextChar();
-        if (ch == charToEat) {
-            nextChar();
-            return true;
-        }
-        return false;
-    }
 
+
+    /**
+     *  A method that calculates the result of the math expression.
+     * @return the result of the math expression if is valid.
+     */
     public double parse() {
         pos = -1;
         nextChar();
@@ -31,12 +45,6 @@ public class ExpressionParser {
         return x;
     }
 
-    // Grammar:
-    // expression = term | expression `+` term | expression `-` term
-    // term = factor | term `*` factor | term `/` factor
-    // factor = `+` factor | `-` factor | `(` expression `)`
-    //        | number | functionName factor | factor `^` factor
-
     private double parseExpression() {
         double x = parseTerm();
         for (;;) {
@@ -44,6 +52,15 @@ public class ExpressionParser {
             else if (eat('-')) x -= parseTerm(); // subtraction
             else return x;
         }
+    }
+    
+    private boolean eat(int charToEat) {
+        while (ch == ' ') nextChar();
+        if (ch == charToEat) {
+            nextChar();
+            return true;
+        }
+        return false;
     }
 
     private double parseTerm() {
