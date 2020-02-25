@@ -5,6 +5,8 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The entity that allows you to calculate math expressions.
@@ -78,10 +80,35 @@ public class Calculator {
         return Long.parseLong(hex,16);
     }
 
+    //dates
+
+
+    /**
+     * A method that calculates the days between two dates
+     * @param date1 First Date
+     * @param date2 Second Date
+     * @return The number of days between two Dates
+     */
+    public long calculateDaysBetweenDates(Date date1, Date date2){
+        return TimeUnit.DAYS.convert(Math.abs(date2.getTime()-date1.getTime()),TimeUnit.MILLISECONDS);
+    }
+
+    ///**
+     //* A method that calculates the exact days between two dates, that means that it not necessarily returns an int.
+     //* @param date1 First Date
+     //* @param date2 Second Date
+     //* @return The number of days between two Dates
+     //*/
+    //public float calculateExactDaysBetweenDates(Date date1, Date date2){
+     //   return (Math.abs(date2.getTime()-date1.getTime()))/(1000*60*60*24);
+    //}
+
     //miss
 
     public int calculateNumberOfDigits(int number){
        return (int) (Math.floor(Math.log10(number)) + 1);
     }
+
+
 
 }

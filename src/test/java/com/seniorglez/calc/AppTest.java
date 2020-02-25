@@ -9,6 +9,10 @@ import org.junit.*;
 
 import javax.script.ScriptException;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -103,4 +107,33 @@ public class AppTest {
         assertEquals(5,calculator.calculateNumberOfDigits(12345));
     }
 
+    @Test
+    public void TestDaysBetweenDates(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
+        String inputString1 = "23 01 2020";
+        String inputString2 = "27 01 2020";
+        try {
+            Date date1 = sdf.parse(inputString1);
+            Date date2 = sdf.parse(inputString2);
+            assertEquals(4,calculator.calculateDaysBetweenDates(date1,date2));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Ignore
+    @Test
+    public void TestExactDaysBetweenDates(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy hh mm ss");
+        String inputString1 = "10 10 2013 11 30 10";
+        String inputString2 = "13 10 2013 20 35 55";
+        try {
+            Date date1 = sdf.parse(inputString1);
+            Date date2 = sdf.parse(inputString2);
+          //  assertTrue(4==calculator.calculateExactDaysBetweenDates(date1,date2));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }
