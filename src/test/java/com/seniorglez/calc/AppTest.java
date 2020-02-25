@@ -9,8 +9,10 @@ import org.junit.*;
 
 import javax.script.ScriptException;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -135,5 +137,28 @@ public class AppTest {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void TestQuadraticEquation2Sol(){
+        double[]sol={3,2};
+        double[]result=calculator.calculateSeccondGradeEquation(1,-5,6);
+        Object[]arr1 ={sol};
+        Object[]arr2={result};
+        assertTrue(Arrays.deepEquals(arr1,arr2));
+    }
+
+    @Test
+    public void  TestQuadraticEquation1Sol(){
+        double[]sol={1};
+        double[]result=calculator.calculateSeccondGradeEquation(1,-2,1);
+        Object[]arr1 ={sol};
+        Object[]arr2={result};
+        assertTrue(Arrays.deepEquals(arr1,arr2));
+    }
+
+    @Test
+    public void TestQuadraticEquationNoRealSol(){
+        assertTrue(calculator.calculateSeccondGradeEquation(1,2,6)==null);
     }
 }

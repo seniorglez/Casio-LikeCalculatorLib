@@ -103,6 +103,35 @@ public class Calculator {
      //   return (Math.abs(date2.getTime()-date1.getTime()))/(1000*60*60*24);
     //}
 
+    //equiations
+
+
+    /**
+     * A method that returns the real solutions of a quadratic equation on an array of doubles
+     * @param a the quadratic coefficient
+     * @param b the linear coefficient
+     * @param c the free term
+     * @return An array of doubles with the solutions or null if there is not any.
+     */
+    public double[] calculateSeccondGradeEquation(double a, double b, double c){
+        double aux = (b*b) - (4*a*c);
+        double x0,x1;
+        double[]sol=null;
+        if(aux > 0) {
+            x0 = (-b + Math.sqrt(aux)) / 2*a;
+            x1 = (-b - Math.sqrt(aux)) / 2*a;
+            sol=new double[2];
+            sol[0]=x0;
+            sol[1]=x1;
+        }else if(aux == 0) {//this is really a good idea?
+                x0 = (-b) / 2*a;
+                sol=new double[1];
+                sol[0]=x0;
+            }
+        return sol;
+    }
+
+
     //miss
 
     public int calculateNumberOfDigits(int number){
