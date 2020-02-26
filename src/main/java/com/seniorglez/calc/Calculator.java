@@ -6,7 +6,12 @@ import javax.script.ScriptException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * The entity that allows you to calculate math expressions.
@@ -16,7 +21,7 @@ public class Calculator {
 
     static private Calculator cal = null;
 
-    private Calculator(){
+    protected Calculator(){
     }
 
     /**
@@ -45,7 +50,7 @@ public class Calculator {
     }
 
     public double calculate(final String str) {
-        return new ExpressionParser(str).parse();
+        return new ExpressionParser(normalizeMathExpression(str)).parse();
     }
 
     // formations
@@ -146,9 +151,31 @@ public class Calculator {
      * @param number the number of a DNI document
      * @return the letter associated
      */
-    public int calculateDNILetter(int number){
+    public char calculateDNILetter(int number){
         String letters="TRWAGMYFPDXBNJZSQVHLCKE";
         int remainder = number%23;
         return letters.charAt(remainder);
+    }
+
+
+    //utilities
+
+    protected String normalizeMathExpression(String s){
+        Map p = new HashMap<String,String>();
+        p.put("[·]","*");
+        p.put("[÷]","/");
+        return expressionNormalizer(s,p);
+    }
+    protected  String expressionNormalizer(String expression, Map <String,String> p){
+        AtomicReference<String> result = new AtomicReference<>();
+        result.set(expression);
+        p.forEach((R,S)->result.set(normaliceChar(R,S,result.get())));
+        return  result.get();
+    }
+
+    protected  String normaliceChar(String regex, String subst, String expression){
+        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        Matcher matcher = pattern.matcher(expression);
+       return matcher.replaceAll(subst);
     }
 }

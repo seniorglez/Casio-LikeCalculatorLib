@@ -4,7 +4,7 @@ package com.seniorglez.calc;
 // term = factor | term `*` factor | term `/` factor
 // factor = `+` factor | `-` factor | `(` expression `)`
 //        | number | functionName factor | factor `^` factor
-public class ExpressionParser {
+public class ExpressionParser {//needed to add support for Euler's number, Euler-Mascheroni constant, pi constant,etc...
 
     public ExpressionParser(String expression){
         this.str=expression;
