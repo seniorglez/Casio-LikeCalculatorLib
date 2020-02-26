@@ -28,7 +28,6 @@ public class Calculator {
         return cal;
     }
 
-
     //Calculate
 
     /**
@@ -103,8 +102,7 @@ public class Calculator {
      //   return (Math.abs(date2.getTime()-date1.getTime()))/(1000*60*60*24);
     //}
 
-    //equiations
-
+    //equations
 
     /**
      * A method that returns the real solutions of a quadratic equation on an array of doubles
@@ -113,7 +111,7 @@ public class Calculator {
      * @param c the free term
      * @return An array of doubles with the solutions or null if there is not any.
      */
-    public double[] calculateSeccondGradeEquation(double a, double b, double c){
+    public double[] calculateSecondGradeEquation(double a, double b, double c){
         double aux = (b*b) - (4*a*c);
         double x0,x1;
         double[]sol=null;
@@ -131,13 +129,26 @@ public class Calculator {
         return sol;
     }
 
-
     //miss
 
+    /**
+     * Method that return the number of digits of an int
+     * @param number the int you want to know the number of digits
+     * @return the number of digits
+     */
     public int calculateNumberOfDigits(int number){
        return (int) (Math.floor(Math.log10(number)) + 1);
     }
 
 
-
+    /**
+     * Method that returns the associated letter of a spanish Documento Nacional de Indentidad
+     * @param number the number of a DNI document
+     * @return the letter associated
+     */
+    public int calculateDNILetter(int number){
+        String letters="TRWAGMYFPDXBNJZSQVHLCKE";
+        int remainder = number%23;
+        return letters.charAt(remainder);
+    }
 }

@@ -142,7 +142,7 @@ public class AppTest {
     @Test
     public void TestQuadraticEquation2Sol(){
         double[]sol={3,2};
-        double[]result=calculator.calculateSeccondGradeEquation(1,-5,6);
+        double[]result=calculator.calculateSecondGradeEquation(1,-5,6);
         Object[]arr1 ={sol};
         Object[]arr2={result};
         assertTrue(Arrays.deepEquals(arr1,arr2));
@@ -151,7 +151,7 @@ public class AppTest {
     @Test
     public void  TestQuadraticEquation1Sol(){
         double[]sol={1};
-        double[]result=calculator.calculateSeccondGradeEquation(1,-2,1);
+        double[]result=calculator.calculateSecondGradeEquation(1,-2,1);
         Object[]arr1 ={sol};
         Object[]arr2={result};
         assertTrue(Arrays.deepEquals(arr1,arr2));
@@ -159,6 +159,6 @@ public class AppTest {
 
     @Test
     public void TestQuadraticEquationNoRealSol(){
-        assertTrue(calculator.calculateSeccondGradeEquation(1,2,6)==null);
+        assertTrue(calculator.calculateSecondGradeEquation(1,2,6)==null);
     }
 }
