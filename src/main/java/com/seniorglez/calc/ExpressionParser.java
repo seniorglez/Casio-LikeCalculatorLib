@@ -94,17 +94,24 @@ public class ExpressionParser {//needed to add support for Euler's number, Euler
             while (ch >= 'a' && ch <= 'z') nextChar();
             String func = str.substring(startPos, this.pos);
             x = parseFactor();
-            if (func.equals("sqrt")) x = Math.sqrt(x);
-            else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));
-            else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));
-            else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));
+            if (func.equals("sqrt")) x = Math.sqrt(x);// square root
+            else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));//sine
+            else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));//cosine
+            else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));//tangent
+            else if (func.equals("asin")) x = Math.asin(Math.toRadians(x));//arcsin
+            else if (func.equals("acos")) x = Math.acos(Math.toRadians(x));//arcsine
+            else if (func.equals("atan")) x = Math.atan(Math.toRadians(x));//arctangent
+            else if (func.equals("sinh")) x = Math.sinh(Math.toRadians(x));//hyperbolic sin
+            else if (func.equals("cosh")) x = Math.tanh(Math.toRadians(x));//hyperbolic cosine
+            else if (func.equals("tanh")) x = Math.tanh(Math.toRadians(x));//hyperbolic tangent
+
             else throw new RuntimeException("Unknown function: " + func);
         } else {
             throw new RuntimeException("Unexpected: " + (char)ch);
         }
 
         if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
-
+        
         return x;
     }
 }
