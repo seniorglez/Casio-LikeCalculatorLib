@@ -103,8 +103,9 @@ Package it using Maven
 ## Contributing
 
 Feel free to fork it and made pull request if you think that your own version is better or adds new functionalities. 
-Please after you open the pull request, make sure that you can actually build the library. If you want to add new methods then write also
-new test for them. 
+Please after you open the pull request, make sure that you can actually build the library. If you want to add new methods then write also new test for them. 
+
+And because we aim to have a safe enviroment for everybody take a look at owr [code of conduct](CODE_OF_CONDUCT.md).
 
 
 ## Authors
