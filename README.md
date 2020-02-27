@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 In order to run Maven you will need to install Java's JDK but as long we are using Maven we didn't need to have the
 specific version of Java that we are using to write owr project (Maven will compile on JDK8 anyway). I recommend to install versions older 
-that JDK8. On my case I'm using JDK11.
+that JDK8 (minimum JDK7). On my case I'm using JDK11.
 
 I think that everybody who works with Java already knows how to set his JAVA_HOME system variable, but some of you use to set it like this:
 
@@ -67,7 +67,10 @@ And now you can just install it
     brew install maven
     
 ```
-If you are using **Windows** please find your own way, I don't work with Windows and I don't know how to install maven on it.
+If you are using **Windows** download maven form the [maven website](http://maven.apache.org/download.cgi). And the follow the
+guide and the advice of the [installation guide](http://maven.apache.org/install.html).
+
+
 
 Now we can check if maven works properly
 
