@@ -99,6 +99,7 @@ Package it using Maven
 ## Built With
 
 * [Maven](https://maven.apache.org/) - The sofware project management tool
+* [JUnit](https://junit.org/junit4/) - The unit testing framework
 
 ## Contributing
 
