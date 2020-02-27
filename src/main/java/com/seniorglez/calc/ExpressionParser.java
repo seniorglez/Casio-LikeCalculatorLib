@@ -102,7 +102,7 @@ public class ExpressionParser {//needed to add support for Euler's number, Euler
             else if (func.equals("acos")) x = Math.acos(Math.toRadians(x));//arcsine
             else if (func.equals("atan")) x = Math.atan(Math.toRadians(x));//arctangent
             else if (func.equals("sinh")) x = Math.sinh(Math.toRadians(x));//hyperbolic sin
-            else if (func.equals("cosh")) x = Math.tanh(Math.toRadians(x));//hyperbolic cosine
+            else if (func.equals("cosh")) x = Math.cosh(Math.toRadians(x));//hyperbolic cosine
             else if (func.equals("tanh")) x = Math.tanh(Math.toRadians(x));//hyperbolic tangent
 
             else throw new RuntimeException("Unknown function: " + func);
