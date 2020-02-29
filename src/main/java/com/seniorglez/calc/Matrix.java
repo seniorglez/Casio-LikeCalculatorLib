@@ -1,6 +1,7 @@
 package com.seniorglez.calc;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class Matrix {
 
@@ -199,7 +200,6 @@ public class Matrix {
         if (col1 != col2)
             sign *= -1;
 
-        System.out.printf("replace col%d with col%d, sign = %d%n", col1, col2, sign);
         double[][] tempCol = new double[matrix.length][1];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -209,4 +209,8 @@ public class Matrix {
         }
     }
 
+    @Override
+    public String toString() {
+        return Arrays.deepToString(this.matrix);
+    }
 }

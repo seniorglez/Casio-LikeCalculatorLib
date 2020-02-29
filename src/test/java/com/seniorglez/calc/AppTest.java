@@ -220,12 +220,38 @@ public class AppTest extends Calculator{
 
         assertTrue(new Matrix(matrix).getDeterminant().toString().equals("948406639458.0000102756821272715293815541180399157942983916305851840"));
 
+    }
 
+    @Test
+    public void testMatrixToString(){
+        double[][]matrix = new double[5][5];
+        matrix[0][0]=1;
+        matrix[0][1]=2;
+        matrix[0][2]=312;
+        matrix[0][3]=132;
+        matrix[0][4]=12;
+        matrix[1][0]=132;
+        matrix[1][1]=123;
+        matrix[1][2]=31;
+        matrix[1][3]=2;
+        matrix[1][4]=3;
+        matrix[2][0]=12;
+        matrix[2][1]=312;
+        matrix[2][2]=312;
+        matrix[2][3]=4;
+        matrix[2][4]=1;
+        matrix[3][0]=2;
+        matrix[3][1]=1;
+        matrix[3][2]=2;
+        matrix[3][3]=342;
+        matrix[3][4]=2;
+        matrix[4][0]=2;
+        matrix[4][1]=2;
+        matrix[4][2]=234;
+        matrix[4][3]=2;
+        matrix[4][4]=234;
 
-
-
-
-
+       System.out.println(new Matrix(matrix));
 
     }
 }
