@@ -91,14 +91,7 @@ public class AppTest extends Calculator{
         assertEquals(-158L,convertHexToDecimal("-9e"));
     }
 
-    @Test
-    public void  testCalculateJSMathExpression(){
-        try {
-            assertEquals(5L,calculateJSMathExpression("3+2"));
-        } catch (ScriptException e) {
-            e.printStackTrace();
-        }
-    }
+
     @Test
     public void testCalculate(){
         assertTrue(7.5==calculate("((4 - 2^3 + 1) * -sqrt(3*3+4*4)) / 2"));
