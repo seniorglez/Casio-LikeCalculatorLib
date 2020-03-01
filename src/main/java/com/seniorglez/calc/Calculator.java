@@ -13,8 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * The entity that allows you to calculate math expressions.
+/**The entity that allows you to calculate math expressions.
  * @author Diego Dominguez Gonzalez
  */
 public class Calculator {
@@ -24,8 +23,7 @@ public class Calculator {
     protected Calculator(){
     }
 
-    /**
-     * Method to get the instance of Calculator.
+    /**Method to get the instance of Calculator.
      * @return the Calculator instance.
      */
     public static Calculator getCalculatorInstance(){
@@ -35,19 +33,6 @@ public class Calculator {
 
     //Calculate
 
-    /**
-     * Method that can calculate the result of a math expression executable by JavaScript. It did not work on Android
-     * @param ex the math expression executable by JavaScript.
-     * @return the result of the expression.
-     * @throws ScriptException
-     * @throws NumberFormatException
-     */
-    public long calculateJSMathExpression(String ex) throws ScriptException,NumberFormatException {
-        ScriptEngineManager factory = new ScriptEngineManager();
-        ScriptEngine engine = factory.getEngineByName("JavaScript");
-        String s = engine.eval(ex).toString();
-        return  Long.parseLong(s);
-    }
 
     public double calculate(final String str) {
         return new ExpressionParser(normalizeMathExpression(str)).parse();
@@ -55,8 +40,7 @@ public class Calculator {
 
     // formations
 
-    /**
-     * A method that express a number on scientific notation.
+    /** Method that express a number on scientific notation.
      * @param number the number to format.
      * @return String with the number expressed on scientific notation.
      */
@@ -87,8 +71,7 @@ public class Calculator {
     //dates
 
 
-    /**
-     * A method that calculates the days between two dates
+    /** Method that calculates the days between two dates
      * @param date1 First Date
      * @param date2 Second Date
      * @return The number of days between two Dates
@@ -109,8 +92,7 @@ public class Calculator {
 
     //equations
 
-    /**
-     * A method that returns the real solutions of a quadratic equation on an array of doubles
+    /** Method that returns the real solutions of a quadratic equation on an array of doubles
      * @param a the quadratic coefficient
      * @param b the linear coefficient
      * @param c the free term
@@ -136,8 +118,7 @@ public class Calculator {
 
     //miss
 
-    /**
-     * Method that return the number of digits of an int
+    /** Method that return the number of digits of an int
      * @param number the int you want to know the number of digits
      * @return the number of digits
      */
@@ -146,8 +127,7 @@ public class Calculator {
     }
 
 
-    /**
-     * Method that returns the associated letter of a spanish Documento Nacional de Indentidad
+    /**Method that returns the associated letter of a spanish Documento Nacional de Indentidad
      * @param number the number of a DNI document
      * @return the letter associated
      */

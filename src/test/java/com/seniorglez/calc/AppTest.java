@@ -5,11 +5,11 @@ package com.seniorglez.calc;
 
 //useful example https://examples.javacodegeeks.com/enterprise-java/maven/junit-maven-example/
 
+import com.seniorglez.calc.model.Matrix;
 import org.junit.*;
 
 import javax.script.ScriptException;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;

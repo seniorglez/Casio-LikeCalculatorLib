@@ -1,4 +1,4 @@
-package com.seniorglez.calc;
+package com.seniorglez.calc.model;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
