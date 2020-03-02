@@ -247,4 +247,13 @@ public class AppTest extends Calculator{
        System.out.println(new Matrix(matrix));
 
     }
+
+    @Test
+    public void testIntBetween(){
+        int r;
+        for (int i=0;i<2000000;++i){
+            r=generateIntBetween(0,i);
+            assertTrue(r>=0&&r<=i);
+        }
+    }
 }

@@ -8,6 +8,7 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
@@ -126,7 +127,14 @@ public class Calculator {
        return (int) (Math.floor(Math.log10(number)) + 1);
     }
 
-
+    /**Method which generates a random int between two values.
+     * @param min the minimun value this method can return.
+     * @param max the maximun value this method can return.
+     * @return a random int between two values.
+     */
+    public int generateIntBetween(int min, int max){
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
     /**Method that returns the associated letter of a spanish Documento Nacional de Indentidad
      * @param number the number of a DNI document
      * @return the letter associated
