@@ -256,4 +256,12 @@ public class AppTest extends Calculator{
             assertTrue(r>=0&&r<=i);
         }
     }
+
+    @Test
+    public void testAverage(){
+        int[]numbers={3,1,13,41,231};
+        System.out.print(getAverageOf(numbers));
+        boolean testPass = (57.8f==getAverageOf(numbers))?true:false;
+        assertTrue(testPass);
+    }
 }

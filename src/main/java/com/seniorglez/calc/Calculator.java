@@ -3,6 +3,7 @@ package com.seniorglez.calc;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Date;
@@ -38,6 +39,15 @@ public class Calculator {
     public double calculate(final String str) {
         return new ExpressionParser(normalizeMathExpression(str)).parse();
     }
+
+    //statistics
+
+    public float getAverageOf(int[] data){
+        int sum = 0;
+        for (int d : data) sum += d;
+        return sum / (float)data.length;
+    }
+
 
     // formations
 
