@@ -36,16 +36,44 @@ public class Calculator {
     //Calculate
 
 
+    /**Parses and calculates the result of a math expression on a String
+     * @param str that represents a math expression
+     * @return the result of the math expression
+     */
     public double calculate(final String str) {
         return new ExpressionParser(normalizeMathExpression(str)).parse();
     }
 
     //statistics
 
+    /**Gets the average value of the members of an array of ints
+     * @param data the values
+     * @return the average of the members
+     */
     public float getAverageOf(int[] data){
-        int sum = 0;
+        double sum = 0;//because it can fail if the total sum reach the max value that an int can have
         for (int d : data) sum += d;
-        return sum / (float)data.length;
+        return (float)(sum / (float)data.length);
+    }
+
+    /**Gets the average value of the members of an array of floats
+     * @param data the values
+     * @return the average of the members
+     */
+    public float getAverageOf(float[]data){
+        float sum = 0f;
+        for (float d : data) sum += d;
+        return sum / data.length;
+    }
+
+    /**Gets the average value of the members of an array of doubles
+     * @param data the values
+     * @return the average of the members
+     */
+    public double getAverageOf(double[]data){
+        long sum = 0;
+        for(double d: data) sum +=d;
+        return (double)sum/data.length;
     }
 
 
