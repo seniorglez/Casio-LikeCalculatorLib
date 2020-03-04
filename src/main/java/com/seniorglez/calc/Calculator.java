@@ -73,6 +73,15 @@ public class Calculator {
     }
 
 
+
+    public float getVarianceOf(int[]data){
+        float average = getAverageOf(data);
+        float var =0;
+        for(int d:data) var +=Math.pow(d-average,2);
+        return var/data.length;
+    }
+
+
     // formations
 
     /** Method that express a number on scientific notation.

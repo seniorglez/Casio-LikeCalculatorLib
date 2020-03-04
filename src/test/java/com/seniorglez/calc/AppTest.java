@@ -258,8 +258,14 @@ public class AppTest extends Calculator{
     @Test
     public void testAverage(){
         int[]numbers={3,1,13,41,231};
-        System.out.print(getAverageOf(numbers));
         boolean testPass = (57.8f==getAverageOf(numbers))?true:false;
+        assertTrue(testPass);
+    }
+
+    @Test
+    public  void testVariance(){
+        int[]numbers={ 0,2,4,5,8,10,10,15,38};
+        boolean testPass = (115.283966f==getVarianceOf(numbers))?true:false;
         assertTrue(testPass);
     }
 }
