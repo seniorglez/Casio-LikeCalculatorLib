@@ -1,9 +1,5 @@
 package com.seniorglez.calc;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Date;
@@ -195,11 +191,11 @@ public class Calculator {
     protected  String expressionNormalizer(String expression, Map <String,String> p){
         AtomicReference<String> result = new AtomicReference<>();
         result.set(expression);
-        p.forEach((R,S)->result.set(normaliceChar(R,S,result.get())));
+        p.forEach((R,S)->result.set(normalizeChar(R,S,result.get())));
         return  result.get();
     }
 
-    protected  String normaliceChar(String regex, String subst, String expression){
+    protected  String normalizeChar(String regex, String subst, String expression){
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(expression);
        return matcher.replaceAll(subst);

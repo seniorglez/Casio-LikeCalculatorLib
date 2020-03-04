@@ -8,8 +8,6 @@ package com.seniorglez.calc;
 import com.seniorglez.calc.model.Matrix;
 import org.junit.*;
 
-import javax.script.ScriptException;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -162,7 +160,7 @@ public class AppTest extends Calculator{
 
     @Test
     public void testNormalizeChar(){
-       assertTrue(normaliceChar("[o]","*","Hola hola").equalsIgnoreCase("h*la h*la"));
+       assertTrue(normalizeChar("[o]","*","Hola hola").equalsIgnoreCase("h*la h*la"));
     }
     @Test
     public void testNormalizeExpression(){
