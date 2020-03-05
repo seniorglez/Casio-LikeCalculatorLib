@@ -9,7 +9,7 @@ do. When we reach that point I did not want to stop there, it will be great if w
   ![casio](https://4.bp.blogspot.com/-mtanr8C8_XE/V4Mk5DuTvBI/AAAAAAAAChI/klNV2_xixSs117gNzu_jh7FtMTf5khtowCLcB/s1600/fx82es.jpg)
 ## Donwload or install with Maven!
 
-You can get the last jar file [here](https://pkg.githubusercontent.com/242176063/2dd53b00-5ba2-11ea-8a3b-a883524fe95b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200301%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200301T095528Z&X-Amz-Expires=300&X-Amz-Signature=8ef7a6c32d9f08f2aa58f28674797a1ce0a016b728e62621d95f58c16943b1f8&X-Amz-SignedHeaders=host&actor_id=44611837&response-content-disposition=filename%3DCasio-LikeCalculatorLib-1.0-20200301.095109-1.jar&response-content-type=application%2Foctet-stream).
+You can get the last jar file [here](https://github.com/seniorglez/Casio-LikeCalculatorLib/packages/141400).
 
 Some people will prefer to import this with maven, to do it add this dependency to your pom file:
 

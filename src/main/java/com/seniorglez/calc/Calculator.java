@@ -28,9 +28,9 @@ public class Calculator {
         if(cal==null) cal= new Calculator();
         return cal;
     }
-
-    //Calculate
-
+    //###########################
+    //#########CALCULATE#########
+    //###########################
 
     /**Parses and calculates the result of a math expression on a String
      * @param str that represents a math expression
@@ -40,7 +40,9 @@ public class Calculator {
         return new ExpressionParser(normalizeMathExpression(str)).parse();
     }
 
-    //statistics
+    //###########################
+    //########STATISTICS#########
+    //###########################
 
     /**Gets the average value of the members of an array of ints
      * @param data the values
@@ -73,7 +75,10 @@ public class Calculator {
     }
 
 
-
+    /**Gets the variance of the members of an array of ints.
+     * @param data the values
+     * @return the variance
+     */
     public float getVarianceOf(int[]data){
         float average = getAverageOf(data);
         float var =0;
@@ -115,7 +120,7 @@ public class Calculator {
     //dates
 
 
-    /** Method that calculates the days between two dates
+    /** Calculates the days between two dates
      * @param date1 First Date
      * @param date2 Second Date
      * @return The number of days between two Dates
@@ -136,7 +141,7 @@ public class Calculator {
 
     //equations
 
-    /** Method that returns the real solutions of a quadratic equation on an array of doubles
+    /** Calculates the real solutions of a quadratic equation on an array of doubles
      * @param a the quadratic coefficient
      * @param b the linear coefficient
      * @param c the free term
@@ -162,7 +167,7 @@ public class Calculator {
 
     //miss
 
-    /** Method that return the number of digits of an int
+    /** Calculates the number of digits of an int
      * @param number the int you want to know the number of digits
      * @return the number of digits
      */
@@ -170,15 +175,15 @@ public class Calculator {
        return (int) (Math.floor(Math.log10(number)) + 1);
     }
 
-    /**Method which generates a random int between two values.
-     * @param min the minimun value this method can return.
-     * @param max the maximun value this method can return.
+    /**Generates a random int between two values.
+     * @param min the min value this method can return.
+     * @param max the max value this method can return.
      * @return a random int between two values.
      */
     public int generateIntBetween(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
-    /**Method that returns the associated letter of a spanish Documento Nacional de Indentidad
+    /**Calculates the associated letter of a spanish Documento Nacional de Indentidad
      * @param number the number of a DNI document
      * @return the letter associated
      */
