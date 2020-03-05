@@ -10,10 +10,7 @@ import org.junit.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -267,5 +264,43 @@ public class AppTest extends Calculator{
         int[]numbers={ 0,2,4,5,8,10,10,15,38};
         boolean testPass = (115.283966f==getVarianceOf(numbers))?true:false;
         assertTrue(testPass);
+    }
+
+
+    @Test
+    public  void testAbsFrequency(){
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        list.add("b");
+        list.add("c");
+        list.add("a");
+        list.add("a");
+        list.add("a");
+        assertTrue(getAbsoluteFrequency(list,"a")==4);
+    }
+
+
+    @Test
+    public void testRelativeFrecuency(){
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        list.add("b");
+        list.add("c");
+        list.add("a");
+        list.add("a");
+        list.add("a");
+        assertTrue(getRelativeFrequency(list,"a")==(4f/9));
+    }
+
+    @Test
+    public void TestMedian(){
+        int[]data = {0,1,2,2,2,2,2,2,2,3,3,3,3};
+        assertTrue(getMedian(data)==2);
     }
 }

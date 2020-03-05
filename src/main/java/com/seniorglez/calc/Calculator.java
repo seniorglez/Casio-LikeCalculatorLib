@@ -2,9 +2,7 @@ package com.seniorglez.calc;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
@@ -86,10 +84,46 @@ public class Calculator {
         return var/data.length;
     }
 
+    /**Gets the variance of the members of an array of floats.
+     * @param data the values
+     * @return the variance
+     */
+    public float getVarianceOf(float[]data){
+        float average = getAverageOf(data);
+        float var =0;
+        for(float d:data) var +=Math.pow(d-average,2);
+        return var/data.length;
+    }
 
-    // formations
+    public int getAbsoluteFrequency(List<String> data, String s){
+        return Collections.frequency(data,s);
+    }
 
-    /** Method that express a number on scientific notation.
+    public float getRelativeFrequency(List<String>data,String s){
+        return getAbsoluteFrequency(data,s)/(float)data.size();
+    }
+
+    //accumulative frequency && accumulative relative frequency
+
+    public float getMedian(int[]data){
+        Arrays.sort(data);
+        if(data.length%2==0)return (data[data.length/2]+data[data.length/2-1]/2f);
+        return data[data.length/2];
+    }
+
+    public float getMedian(float[]data){
+        Arrays.sort(data);
+        if(data.length%2==0)return (data[data.length/2]+data[data.length/2-1]/2f);
+        return data[data.length/2];
+    }
+    //mode
+    //percentile
+
+    //#######################
+    //########FORMAT#########
+    //#######################
+
+    /**Method that express a number on scientific notation.
      * @param number the number to format.
      * @return String with the number expressed on scientific notation.
      */
@@ -98,8 +132,9 @@ public class Calculator {
         return formatter.format(number);
     }
 
-
-    //conversions
+    //###########################
+    //########CONVERSION#########
+    //###########################
 
     public String convertDecimalToBinary(long decimal){
         return Long.toBinaryString(decimal);
@@ -117,10 +152,11 @@ public class Calculator {
         return Long.parseLong(hex,16);
     }
 
-    //dates
+    //######################
+    //########DATES#########
+    //######################
 
-
-    /** Calculates the days between two dates
+    /**Calculates the days between two dates
      * @param date1 First Date
      * @param date2 Second Date
      * @return The number of days between two Dates
@@ -141,7 +177,7 @@ public class Calculator {
 
     //equations
 
-    /** Calculates the real solutions of a quadratic equation on an array of doubles
+    /**Calculates the real solutions of a quadratic equation on an array of doubles
      * @param a the quadratic coefficient
      * @param b the linear coefficient
      * @param c the free term
@@ -167,7 +203,7 @@ public class Calculator {
 
     //miss
 
-    /** Calculates the number of digits of an int
+    /**Calculates the number of digits of an int
      * @param number the int you want to know the number of digits
      * @return the number of digits
      */
@@ -183,6 +219,7 @@ public class Calculator {
     public int generateIntBetween(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
+
     /**Calculates the associated letter of a spanish Documento Nacional de Indentidad
      * @param number the number of a DNI document
      * @return the letter associated
