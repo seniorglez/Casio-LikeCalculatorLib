@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
 /**The entity that allows you to calculate math expressions.
  * @author Diego Dominguez Gonzalez
@@ -116,8 +117,15 @@ public class Calculator {
         if(data.length%2==0)return (data[data.length/2]+data[data.length/2-1]/2f);
         return data[data.length/2];
     }
+
+
+
+
     //mode
     //percentile
+
+
+
 
     //#######################
     //########FORMAT#########
@@ -250,5 +258,41 @@ public class Calculator {
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(expression);
        return matcher.replaceAll(subst);
+    }
+
+
+    protected int findFirst(int[] data,int target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(float[] data,float target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(byte[] data,byte target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(char[] data,char target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(short[] data,short target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(long[] data,long target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected int findFirst(double[] data,double target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+    protected int findFirst(boolean[] data,boolean target){
+        return IntStream.range(0, data.length).filter(i ->target ==data[i]).findFirst().orElse(-1);
+    }
+
+    protected<T> int findFirst(T[]data,T target){
+        return IntStream.range(0, data.length).filter(i ->target.equals(data[i])).findFirst().orElse(-1);
     }
 }
