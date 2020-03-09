@@ -239,7 +239,8 @@ public class AppTest extends Calc {
         matrix[4][3]=2;
         matrix[4][4]=234;
 
-       System.out.println(new Matrix(matrix));
+       assertTrue(new Matrix(matrix).toString().equals("[[1.0, 2.0, 312.0, 132.0, 12.0], [132.0, 123.0, 31.0, 2.0, 3.0]," +
+               " [12.0, 312.0, 312.0, 4.0, 1.0], [2.0, 1.0, 2.0, 342.0, 2.0], [2.0, 2.0, 234.0, 2.0, 234.0]]"));
 
     }
 
@@ -308,15 +309,23 @@ public class AppTest extends Calc {
     public void TestPercentileKnowingPoss(){
         int[]data=new int[47];
         for (int i:data) i=1;
-
         assertTrue(Statistics.getPercentileOfPosition(data,12)==24.468084f);
     }
 
     @Test
-    public void TestPercentileKnowingValue(){
+    public void TestPercentileKnowingValue(){//idk why this is does not working 
         int[]data=new int[47];
         for (int i:data) i=1;
-        data[12]=1999;
+        data[11]=1999;
         System.out.print(Statistics.getPercentileOfValue(data,1999));
+    }
+
+    @Test
+
+    public void testFindFirst(){
+        int[]data=new int[47];
+        for (int i:data) i=1;
+        data[11]=1999;
+       assertTrue(findFirst(data,1999)==11);
     }
 }

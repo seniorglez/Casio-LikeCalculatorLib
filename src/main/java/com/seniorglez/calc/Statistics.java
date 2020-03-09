@@ -17,7 +17,6 @@ public class Statistics {
         for (int d : data) sum += d;
         return (float)(sum / (float)data.length);
     }
-
     /**Gets the average value of the members of an array of floats
      * @param data the values
      * @return the average of the members
@@ -27,7 +26,6 @@ public class Statistics {
         for (float d : data) sum += d;
         return sum / data.length;
     }
-
     /**Gets the average value of the members of an array of doubles
      * @param data the values
      * @return the average of the members
@@ -37,8 +35,6 @@ public class Statistics {
         for(double d: data) sum +=d;
         return (double)sum/data.length;
     }
-
-
     /**Gets the variance of the members of an array of ints.
      * @param data the values
      * @return the variance
@@ -82,10 +78,6 @@ public class Statistics {
         if(data.length%2==0)return (data[data.length/2]+data[data.length/2-1]/2f);
         return data[data.length/2];
     }
-
-
-
-
     //mode
     //percentile
     public static float getPercentileOfPosition(int[]data,int position){
@@ -94,10 +86,7 @@ public class Statistics {
 
     public static float getPercentileOfValue(int[]data,int value){
         Arrays.sort(data);
-        return ((findFirst(data, value)-0.5f)/data.length)*100f;
-
+        int position = findFirst(data,value);
+        return getPercentileOfPosition(data,position);
     }
-
-
-
 }
