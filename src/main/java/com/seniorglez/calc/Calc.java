@@ -29,38 +29,6 @@ public class Calc {
     }
 
 
-    //#######################
-    //########FORMAT#########
-    //#######################
-
-    /**Method that express a number on scientific notation.
-     * @param number the number to format.
-     * @return String with the number expressed on scientific notation.
-     */
-    public static String formatScientificNotation(double number){
-        NumberFormat formatter = new DecimalFormat("0.######E0");
-        return formatter.format(number);
-    }
-
-    //###########################
-    //########CONVERSION#########
-    //###########################
-
-    public static String convertDecimalToBinary(long decimal){
-        return Long.toBinaryString(decimal);
-    }
-
-    public static long convertBinaryToDecimal(String bin){
-        return Long.parseLong(bin,2);
-    }
-
-    public static String convertDecimalToHex(long decimal){
-        return Long.toHexString(decimal);
-    }
-
-    public static long convertHexToDecimal(String hex){
-        return Long.parseLong(hex,16);
-    }
 
 
     //equations

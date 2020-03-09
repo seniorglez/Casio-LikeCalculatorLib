@@ -35,26 +35,26 @@ public class AppTest extends Calc {
     @Test
     public void testScientificNotationPositiveExpected(){
         int max = Integer.MAX_VALUE;
-        assertTrue(formatScientificNotation(max).equals("2.147484E9"));
+        assertTrue(Formater.formatScientificNotation(max).equals("2.147484E9"));
     }
     @Test
     public void  testScientificNotationNegativeExpected(){
         int min = Integer.MIN_VALUE;
-        assertTrue(formatScientificNotation(min).equals("-2.147484E9"));
+        assertTrue(Formater.formatScientificNotation(min).equals("-2.147484E9"));
     }
 
     @Test
     public void testlong2Binary(){
-        assertTrue(convertDecimalToBinary(12313).equals("11000000011001"));
+        assertTrue(Conversion.convertDecimalToBinary(12313).equals("11000000011001"));
     }
     @Test
     public void testNegativelong2Binary(){
-        assertTrue(convertDecimalToBinary(-12313).equals("1111111111111111111111111111111111111111111111111100111111100111"));
+        assertTrue(Conversion.convertDecimalToBinary(-12313).equals("1111111111111111111111111111111111111111111111111100111111100111"));
     }
 
     @Test
     public void testBinary2Decimal(){
-        assertEquals(12313,convertBinaryToDecimal("11000000011001"));
+        assertEquals(12313,Conversion.convertBinaryToDecimal("11000000011001"));
     }
 
     @Ignore
@@ -67,7 +67,7 @@ public class AppTest extends Calc {
 
     @Test
     public void testDecimal2Hex(){
-       assertTrue(convertDecimalToHex(158).equals("9e"));
+       assertTrue(Conversion.convertDecimalToHex(158).equals("9e"));
     }
 
     @Ignore
@@ -78,12 +78,12 @@ public class AppTest extends Calc {
 
     @Test
     public void testHex2Decimal(){
-        assertEquals(158L,convertHexToDecimal("9e"));
+        assertEquals(158L,Conversion.convertHexToDecimal("9e"));
     }
 
     @Test
     public void testNegativeHex2Decimal(){
-        assertEquals(-158L,convertHexToDecimal("-9e"));
+        assertEquals(-158L,Conversion.convertHexToDecimal("-9e"));
     }
 
 
@@ -319,5 +319,4 @@ public class AppTest extends Calc {
         data[12]=1999;
         System.out.print(Statistics.getPercentileOfValue(data,1999));
     }
-
 }

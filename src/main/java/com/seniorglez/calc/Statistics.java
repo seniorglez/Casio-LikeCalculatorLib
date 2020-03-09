@@ -8,11 +8,6 @@ import static com.seniorglez.calc.Calc.findFirst;
 
 public class Statistics {
 
-
-    //###########################
-    //########STATISTICS#########
-    //###########################
-
     /**Gets the average value of the members of an array of ints
      * @param data the values
      * @return the average of the members
