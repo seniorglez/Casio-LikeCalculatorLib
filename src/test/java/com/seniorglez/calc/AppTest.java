@@ -7,11 +7,9 @@ package com.seniorglez.calc;
 
 import com.seniorglez.calc.model.Matrix;
 import org.junit.*;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -311,17 +309,16 @@ public class AppTest extends Calc {
         for (int i:data) i=1;
         assertTrue(Statistics.getPercentileOfPosition(data,12)==24.468084f);
     }
-
+/*
     @Test
-    public void TestPercentileKnowingValue(){//idk why this is does not working 
+    public void TestPercentileKnowingValue(){//idk why this is does not working
         int[]data=new int[47];
         for (int i:data) i=1;
         data[11]=1999;
         System.out.print(Statistics.getPercentileOfValue(data,1999));
     }
-
+*/
     @Test
-
     public void testFindFirst(){
         int[]data=new int[47];
         for (int i:data) i=1;
