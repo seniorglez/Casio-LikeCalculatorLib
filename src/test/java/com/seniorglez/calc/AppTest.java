@@ -15,7 +15,7 @@ import java.util.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class AppTest extends Calculator{
+public class AppTest extends Calc {
 
 
 
@@ -105,7 +105,7 @@ public class AppTest extends Calculator{
         try {
             Date date1 = sdf.parse(inputString1);
             Date date2 = sdf.parse(inputString2);
-            assertEquals(4,calculateDaysBetweenDates(date1,date2));
+            assertEquals(4,Delorean.calculateDaysBetweenDates(date1,date2));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -255,14 +255,14 @@ public class AppTest extends Calculator{
     @Test
     public void testAverage(){
         int[]numbers={3,1,13,41,231};
-        boolean testPass = (57.8f==getAverageOf(numbers))?true:false;
+        boolean testPass = (57.8f==Statistics.getAverageOf(numbers))?true:false;
         assertTrue(testPass);
     }
 
     @Test
     public  void testVariance(){
         int[]numbers={ 0,2,4,5,8,10,10,15,38};
-        boolean testPass = (115.283966f==getVarianceOf(numbers))?true:false;
+        boolean testPass = (115.283966f==Statistics.getVarianceOf(numbers))?true:false;
         assertTrue(testPass);
     }
 
@@ -279,7 +279,7 @@ public class AppTest extends Calculator{
         list.add("a");
         list.add("a");
         list.add("a");
-        assertTrue(getAbsoluteFrequency(list,"a")==4);
+        assertTrue(Statistics.getAbsoluteFrequency(list,"a")==4);
     }
 
 
@@ -295,15 +295,29 @@ public class AppTest extends Calculator{
         list.add("a");
         list.add("a");
         list.add("a");
-        assertTrue(getRelativeFrequency(list,"a")==(4f/9));
+        assertTrue(Statistics.getRelativeFrequency(list,"a")==(4f/9));
     }
 
     @Test
     public void TestMedian(){
         int[]data = {0,1,2,2,2,2,2,2,2,3,3,3,3};
-        assertTrue(getMedian(data)==2);
+        assertTrue(Statistics.getMedian(data)==2);
     }
 
+    @Test
+    public void TestPercentileKnowingPoss(){
+        int[]data=new int[47];
+        for (int i:data) i=1;
 
+        assertTrue(Statistics.getPercentileOfPosition(data,12)==24.468084f);
+    }
+
+    @Test
+    public void TestPercentileKnowingValue(){
+        int[]data=new int[47];
+        for (int i:data) i=1;
+        data[12]=1999;
+        System.out.print(Statistics.getPercentileOfValue(data,1999));
+    }
 
 }
