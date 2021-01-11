@@ -1,12 +1,12 @@
 package com.seniorglez.calc;
 
-
-
-
 //useful example https://examples.javacodegeeks.com/enterprise-java/maven/junit-maven-example/
 
 import com.seniorglez.calc.model.Matrix;
 import org.junit.*;
+
+import jdk.nashorn.internal.ir.annotations.Ignore;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -14,8 +14,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AppTest extends Calc {
-
-
 
     @BeforeClass
     public static void instanceCalculator(){//idk if static test are ok
@@ -61,8 +59,6 @@ public class AppTest extends Calc {
 
     }
 
-
-
     @Test
     public void testDecimal2Hex(){
        assertTrue(Conversion.convertDecimalToHex(158).equals("9e"));
@@ -107,7 +103,6 @@ public class AppTest extends Calc {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
 
     @Ignore
@@ -157,22 +152,10 @@ public class AppTest extends Calc {
     public void testNormalizeChar(){
        assertTrue(normalizeChar("[o]","*","Hola hola").equalsIgnoreCase("h*la h*la"));
     }
-    @Test
-    public void testNormalizeExpression(){
-        Map p = new HashMap<String,String>();
-        p.put("[o]","*");
-        p.put("[a]","/");
-        assertTrue(expressionNormalizer("Hola hola",p).equalsIgnoreCase("h*l/ h*l/"));
-    }
 
     @Test
     public void testNormalizeMathExpression(){
         assertTrue(normalizeMathExpression("((4 - 2^3 + 1) · -sqrt(3·3+4*4)) ÷ 2").equals("((4 - 2^3 + 1) * -sqrt(3*3+4*4)) / 2"));
-    }
-
-    @Test
-    public void calculateUnormalizeExpression(){
-        assertTrue(7.5==calculate("((4 - 2^3 + 1) · -sqrt(3·3+4*4)) ÷ 2"));
     }
 
     @Test
@@ -203,9 +186,7 @@ public class AppTest extends Calc {
         matrix[4][2]=234;
         matrix[4][3]=2;
         matrix[4][4]=234;
-
         assertTrue(new Matrix(matrix).getDeterminant().toString().equals("948406639458.0000102756821272715293815541180399157942983916305851840"));
-
     }
 
     @Test
@@ -280,7 +261,6 @@ public class AppTest extends Calc {
         list.add("a");
         assertTrue(Statistics.getAbsoluteFrequency(list,"a")==4);
     }
-
 
     @Test
     public void testRelativeFrecuency(){
