@@ -5,13 +5,23 @@ we want this library to use it on android projects.
 
 I want this library to be able to calculate the same thinks that the casio calculator I used on my secondary school can 
 do. When we reach that point I did not want to stop there, it will be great if we can add new awesome features to it.
-  
-  ![casio](https://4.bp.blogspot.com/-mtanr8C8_XE/V4Mk5DuTvBI/AAAAAAAAChI/klNV2_xixSs117gNzu_jh7FtMTf5khtowCLcB/s1600/fx82es.jpg)
-## Donwload or install with Maven!
+
+<p align="center">
+<img src ='https://4.bp.blogspot.com/-mtanr8C8_XE/V4Mk5DuTvBI/AAAAAAAAChI/klNV2_xixSs117gNzu_jh7FtMTf5khtowCLcB/s1600/fx82es.jpg' alt='casio'  height="350 em">
+</p>
+
+
+## How to use it
+
+These instructions will get you a copy of the project to use it on yours.
+
+### Downloading the jar
 
 You can get the last jar file [here](https://github.com/seniorglez/Casio-LikeCalculatorLib/packages/141400).
 
-Some people will prefer to import this with maven, to do it add this dependency to your pom file:
+### Maven Dependency
+
+Some people will prefer to use this lib with a maven project, to do it add this dependency to your pom file:
 
 ```xml
 <dependency>
@@ -29,7 +39,22 @@ mvn install
 
 ```
 
+### Android project
 
+You can get the last jar file [here](https://github.com/seniorglez/Casio-LikeCalculatorLib/packages/141400).
+
+Using it is very simple you only have to import the jar as in your android project and add the following to the build.gradle file:
+
+```
+    android {
+       compileOptions {
+           sourceCompatibility JavaVersion.VERSION_1_8
+           targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+```
+
+And you should be able to import the library classes. 
 
 ## Getting Started
 
