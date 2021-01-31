@@ -89,8 +89,8 @@ public class ComplexMath {
     }
 
     //Root
-    public static root(ComplexNumber a) {
-        
+    public static ComplexNumber root(ComplexNumber a) {
+        return null;
     }
 
     //public static ComplexNumber cbrt(ComplexNumber a) {}
