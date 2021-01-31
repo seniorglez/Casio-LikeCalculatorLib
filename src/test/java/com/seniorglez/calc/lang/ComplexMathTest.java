@@ -23,4 +23,12 @@ public class ComplexMathTest {
         ComplexNumber c = ComplexMath.multiply(a, b);
         assertTrue(c.getImaginaryUnit() == 176 && c.getRealUnit() == 53);
     }
+
+    @Test
+    public void testComplexNumberDivideComplexNumber() {
+        ComplexNumber a = ComplexNumber.fromValue(2, 4, ComplexNumber.BINOMIC);
+        ComplexNumber b = ComplexNumber.fromValue(16, 8, ComplexNumber.BINOMIC);
+        ComplexNumber c = ComplexMath.divide(a, b);
+        assertTrue(c.getImaginaryUnit() == 0.15 && c.getRealUnit() == (0.2));
+    }
 }

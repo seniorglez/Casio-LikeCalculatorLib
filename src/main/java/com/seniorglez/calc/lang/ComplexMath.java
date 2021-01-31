@@ -64,6 +64,26 @@ public class ComplexMath {
         return ComplexNumber.fromValue(a.getRealUnit() * b, a.getImaginaryUnit()*b, ComplexNumber.BINOMIC);
     }
 
+
+    //Division
+    public static ComplexNumber divide(ComplexNumber a, ComplexNumber b) {
+        return ComplexNumber.fromValue(divideRealUnits(a, b),divideImaginaryUnits(a, b), ComplexNumber.BINOMIC);
+    }
+
+    /**
+     * Returns the real unit of the division of its arguments.
+     */
+    private static double divideRealUnits(ComplexNumber a, ComplexNumber b) {
+        return ((a.getRealUnit() * b.getRealUnit() + a.getImaginaryUnit()* b.getImaginaryUnit())/(Math.pow(b.getRealUnit(),2) + Math.pow(b.getImaginaryUnit(),2)));
+    }
+
+    /**
+     * Returns the imaginary unit of the division of its arguments.
+     */
+    private static double divideImaginaryUnits(ComplexNumber a, ComplexNumber b) {
+        return ((-a.getRealUnit() * b.getImaginaryUnit() + a.getImaginaryUnit()* b.getRealUnit())/(Math.pow(b.getRealUnit(),2) + Math.pow(b.getImaginaryUnit(),2)));
+    }
+
     //public static ComplexNumber cbrt(ComplexNumber a) {}
 }
 
