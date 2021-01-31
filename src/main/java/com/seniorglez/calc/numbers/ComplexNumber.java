@@ -8,13 +8,12 @@ public class ComplexNumber {
     private double realUnit;
     private double imaginaryUnit; 
 
-    private ComplexNumber(double realUnit,double imaginaryUnit)
-    {
+    private ComplexNumber(double realUnit,double imaginaryUnit) {
         this.realUnit = realUnit;
         this.imaginaryUnit = imaginaryUnit;
     }
 
-    public static ComplexNumber fromValue(double a, double b, int notation){
+    public static ComplexNumber fromValue(double a, double b, int notation) {
         switch (notation){
             case 0:
                 return new ComplexNumber(a,b);
@@ -24,7 +23,6 @@ public class ComplexNumber {
                 return null;
         }
     }
-
 
     @Override
     public String toString() {
@@ -71,11 +69,5 @@ public class ComplexNumber {
         if(this.realUnit>=0 && this.imaginaryUnit>=0) return getRawAngle(); //if both parts are positive
         if(this.realUnit<0 &&  this.imaginaryUnit>=0) return getRawAngle() + Math.PI; // if only the imaginary part is real
         return getRawAngle() - Math.PI; // if both parts are negative
-    }
-
-    // Static methods
-
-    public static ComplexNumber sum(ComplexNumber a, ComplexNumber b){
-        return new ComplexNumber(a.getRealUnit()+b.getRealUnit(), a.getImaginaryUnit() + b.getImaginaryUnit());
     }
 }

@@ -16,83 +16,83 @@ import static org.junit.Assert.assertTrue;
 public class AppTest extends Calc {
 
     @BeforeClass
-    public static void instanceCalculator(){//idk if static test are ok
+    public static void beforeClass() {
       System.out.println("Starting tests");
     }
     @Before
-    public void beforeEachTest(){
+    public void beforeEachTest() {
         System.out.println("Text starting");
     }
     @After
-    public void afterEachTest(){
+    public void afterEachTest() {
         System.out.println("Test ending");
     }
 
     @Test
-    public void testScientificNotationPositiveExpected(){
+    public void testScientificNotationPositiveExpected() {
         int max = Integer.MAX_VALUE;
         assertTrue(Formater.formatScientificNotation(max).equals("2.147484E9"));
     }
     @Test
-    public void  testScientificNotationNegativeExpected(){
+    public void  testScientificNotationNegativeExpected() {
         int min = Integer.MIN_VALUE;
         assertTrue(Formater.formatScientificNotation(min).equals("-2.147484E9"));
     }
 
     @Test
-    public void testlong2Binary(){
+    public void testlong2Binary() {
         assertTrue(Conversion.convertDecimalToBinary(12313).equals("11000000011001"));
     }
     @Test
-    public void testNegativelong2Binary(){
+    public void testNegativelong2Binary() {
         assertTrue(Conversion.convertDecimalToBinary(-12313).equals("1111111111111111111111111111111111111111111111111100111111100111"));
     }
 
     @Test
-    public void testBinary2Decimal(){
+    public void testBinary2Decimal() {
         assertEquals(12313,Conversion.convertBinaryToDecimal("11000000011001"));
     }
 
     @Ignore
     @Test
-    public void testNegativeBinary2Decimal(){
+    public void testNegativeBinary2Decimal() {
 
     }
 
     @Test
-    public void testDecimal2Hex(){
+    public void testDecimal2Hex() {
        assertTrue(Conversion.convertDecimalToHex(158).equals("9e"));
     }
 
     @Ignore
     @Test
-    public void testNegativeDecimal2Hex(){
+    public void testNegativeDecimal2Hex() {
 
     }
 
     @Test
-    public void testHex2Decimal(){
+    public void testHex2Decimal() {
         assertEquals(158L,Conversion.convertHexToDecimal("9e"));
     }
 
     @Test
-    public void testNegativeHex2Decimal(){
+    public void testNegativeHex2Decimal() {
         assertEquals(-158L,Conversion.convertHexToDecimal("-9e"));
     }
 
 
     @Test
-    public void testCalculate(){
+    public void testCalculate() {
         assertTrue(7.5==calculate("((4 - 2^3 + 1) * -sqrt(3*3+4*4)) / 2"));
     }
 
     @Test
-    public void TestCalculateNumberOfDigits(){
+    public void TestCalculateNumberOfDigits() {
         assertEquals(5,calculateNumberOfDigits(12345));
     }
 
     @Test
-    public void TestDaysBetweenDates(){
+    public void TestDaysBetweenDates() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
         String inputString1 = "23 01 2020";
         String inputString2 = "27 01 2020";
@@ -107,7 +107,7 @@ public class AppTest extends Calc {
 
     @Ignore
     @Test
-    public void TestExactDaysBetweenDates(){
+    public void TestExactDaysBetweenDates() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy hh mm ss");
         String inputString1 = "10 10 2013 11 30 10";
         String inputString2 = "13 10 2013 20 35 55";
@@ -121,7 +121,7 @@ public class AppTest extends Calc {
     }
 
     @Test
-    public void TestQuadraticEquation2Sol(){
+    public void TestQuadraticEquation2Sol() {
         double[]sol={3,2};
         double[]result=calculateSecondGradeEquation(1,-5,6);
         Object[]arr1 ={sol};
@@ -130,7 +130,7 @@ public class AppTest extends Calc {
     }
 
     @Test
-    public void  TestQuadraticEquation1Sol(){
+    public void  TestQuadraticEquation1Sol() {
         double[]sol={1};
         double[]result=calculateSecondGradeEquation(1,-2,1);
         Object[]arr1 ={sol};
@@ -139,27 +139,31 @@ public class AppTest extends Calc {
     }
 
     @Test
-    public void TestQuadraticEquationNoRealSol(){
+    public void TestQuadraticEquationNoRealSol() {
         assertTrue(calculateSecondGradeEquation(1,2,6)==null);
     }
 
     @Test
-    public void DNILetterTest(){//example form the spanish gob http://www.interior.gob.es/web/servicios-al-ciudadano/dni/calculo-del-digito-de-control-del-nif-nie
+    public void DNILetterTest() {//example form the spanish gob http://www.interior.gob.es/web/servicios-al-ciudadano/dni/calculo-del-digito-de-control-del-nif-nie
         assertTrue(calculateDNILetter(12345678)=='Z');
     }
 
     @Test
-    public void testNormalizeChar(){
+    public void testNormalizeChar() {
        assertTrue(normalizeChar("[o]","*","Hola hola").equalsIgnoreCase("h*la h*la"));
     }
 
+    //https://stackoverflow.com/questions/24863185/what-is-an-assertionerror-in-which-case-should-i-throw-it-from-my-own-code
+    /*
+    @Ignore
     @Test
-    public void testNormalizeMathExpression(){
+    public void testNormalizeMathExpression() {
         assertTrue(normalizeMathExpression("((4 - 2^3 + 1) · -sqrt(3·3+4*4)) ÷ 2").equals("((4 - 2^3 + 1) * -sqrt(3*3+4*4)) / 2"));
     }
-
+    */
+    
     @Test
-    public void calculateMatrixDeterminant(){
+    public void calculateMatrixDeterminant() {
         double[][]matrix = new double[5][5];
         matrix[0][0]=1;
         matrix[0][1]=2;
@@ -190,7 +194,7 @@ public class AppTest extends Calc {
     }
 
     @Test
-    public void testMatrixToString(){
+    public void testMatrixToString() {
         double[][]matrix = new double[5][5];
         matrix[0][0]=1;
         matrix[0][1]=2;
@@ -226,21 +230,21 @@ public class AppTest extends Calc {
     @Test
     public void testIntBetween(){
         int r;
-        for (int i=0;i<2000000;++i){
+        for (int i=0;i<2000000;++i) {
             r=generateIntBetween(0,i);
             assertTrue(r>=0&&r<=i);
         }
     }
 
     @Test
-    public void testAverage(){
+    public void testAverage() {
         int[]numbers={3,1,13,41,231};
         boolean testPass = (57.8f==Statistics.getAverageOf(numbers))?true:false;
         assertTrue(testPass);
     }
 
     @Test
-    public  void testVariance(){
+    public  void testVariance() {
         int[]numbers={ 0,2,4,5,8,10,10,15,38};
         boolean testPass = (115.283966f==Statistics.getVarianceOf(numbers))?true:false;
         assertTrue(testPass);
