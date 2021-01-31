@@ -48,7 +48,6 @@ public class Matrix {
         }
     }
 
-
     private boolean isUpperTriangular() {
 
         if (matrix.length < 2)
@@ -90,9 +89,7 @@ public class Matrix {
             for (int j = 0; j < matrix.length; j++) {
                 if (i == j)
                     result = result.multiply(BigDecimal.valueOf(matrix[i][j]));
-
             }
-
         }
         return result;
     }

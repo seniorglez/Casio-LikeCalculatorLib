@@ -84,6 +84,15 @@ public class ComplexMath {
         return ((-a.getRealUnit() * b.getImaginaryUnit() + a.getImaginaryUnit()* b.getRealUnit())/(Math.pow(b.getRealUnit(),2) + Math.pow(b.getImaginaryUnit(),2)));
     }
 
+    public static ComplexNumber divide(ComplexNumber a, double b) {
+        return ComplexNumber.fromValue(a.getRealUnit()/b, a.getImaginaryUnit()/b, ComplexNumber.BINOMIC);
+    }
+
+    //Root
+    public static root(ComplexNumber a) {
+        
+    }
+
     //public static ComplexNumber cbrt(ComplexNumber a) {}
 }
 

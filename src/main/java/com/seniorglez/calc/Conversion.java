@@ -17,5 +17,4 @@ public class Conversion {
     public static long convertHexToDecimal(String hex){
         return Long.parseLong(hex,16);
     }
-
 }

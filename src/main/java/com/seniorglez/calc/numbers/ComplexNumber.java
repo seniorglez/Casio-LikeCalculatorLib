@@ -13,14 +13,44 @@ public class ComplexNumber {
         this.imaginaryUnit = imaginaryUnit;
     }
 
+    /**
+     * Returns a new ComplexNumber from the given params.
+     * @param a
+     * @param b
+     * @param notation
+     * @return
+     */
     public static ComplexNumber fromValue(double a, double b, int notation) {
         switch (notation){
             case 0:
                 return new ComplexNumber(a,b);
             case 1:
-                return null; //not implemented
+                return fromPolar(a, b);
             default:
                 return null;
+        }
+    }
+
+    /**
+     * 
+     * @param length length of the vertor
+     * @param angle angle with the real axis
+     * @return 
+     */
+    private static ComplexNumber fromPolar(double length, double angle) {
+        return new ComplexNumber(length*Math.sen(angle),length*Math.sen(angle));
+    }
+
+   
+
+    public String toString(int notation) {
+        switch(notation){
+            case BINOMIC:
+                return toString();
+            case POLAR:
+                return toStringPolar();
+            default:
+                return "?";
         }
     }
 
@@ -29,15 +59,8 @@ public class ComplexNumber {
         return realUnit + " + " + imaginaryUnit + ("i");
     }
 
-    public String toString(int notation) {
-        switch(notation){
-            case BINOMIC:
-                return toString();
-            case POLAR:
-                return "polar";
-            default:
-                return "?";
-        }
+    private String toStringPolar() {
+        return "Not implemenmted";
     }
     //Gettter and Setters
 
