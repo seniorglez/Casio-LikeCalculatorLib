@@ -38,11 +38,9 @@ public class ComplexNumber {
      * @return 
      */
     private static ComplexNumber fromPolar(double length, double angle) {
-        return new ComplexNumber(length*Math.sen(angle),length*Math.sen(angle));
+        return new ComplexNumber(length*Math.cos(angle),length*Math.sin(angle));
     }
-
-   
-
+    
     public String toString(int notation) {
         switch(notation){
             case BINOMIC:
