@@ -1,10 +1,9 @@
-package com.seniorglez.calc;
+package com.seniorglez.calc.lang;
 
 import org.junit.*;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import com.seniorglez.calc.numbers.ComplexNumber;
-import com.seniorglez.calc.lang.ComplexMath;
+
 
 public class ComplexMathTest {
     @Test
@@ -30,5 +29,13 @@ public class ComplexMathTest {
         ComplexNumber b = ComplexNumber.fromValue(16, 8, ComplexNumber.BINOMIC);
         ComplexNumber c = ComplexMath.divide(a, b);
         assertTrue(c.getImaginaryUnit() == 0.15 && c.getRealUnit() == (0.2));
+    }
+
+    @Test
+    public void testComplexNumberRoot() {
+        ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
+        ComplexNumber[] results = ComplexMath.root(a,3);
+        ComplexNumber b = results[0];
+        System.out.println(b.getRealUnit());
     }
 }

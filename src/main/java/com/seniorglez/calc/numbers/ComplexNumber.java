@@ -32,7 +32,7 @@ public class ComplexNumber {
     }
 
     /**
-     * 
+     * Returns a new ComplexNumber from the given params
      * @param length length of the vertor
      * @param angle angle with the real axis
      * @return 
@@ -40,26 +40,27 @@ public class ComplexNumber {
     private static ComplexNumber fromPolar(double length, double angle) {
         return new ComplexNumber(length*Math.cos(angle),length*Math.sin(angle));
     }
-    
+    /*
     public String toString(int notation) {
         switch(notation){
             case BINOMIC:
                 return toString();
-            case POLAR:
-                return toStringPolar();
+            //case POLAR: //I have no idea how to implement this. :D
+                //return toStringPolar();
             default:
                 return "?";
         }
     }
-
+    */
+    /**
+     * Returns a string representing the complex number on binomic notation.
+     * @return
+     */
     @Override
     public String toString() {
         return realUnit + " + " + imaginaryUnit + ("i");
     }
 
-    private String toStringPolar() {
-        return "Not implemenmted";
-    }
     //Gettter and Setters
 
     public double getRealUnit() {
@@ -79,7 +80,7 @@ public class ComplexNumber {
     }
 
     public double getRadius() {
-        return Math.sqrt(Math.pow(this.getRealUnit(), this.getImaginaryUnit()));
+        return Math.sqrt(Math.pow(this.getRealUnit(),2) + Math.pow(this.getImaginaryUnit(),2));
     }
 
     public double getRawAngle() {

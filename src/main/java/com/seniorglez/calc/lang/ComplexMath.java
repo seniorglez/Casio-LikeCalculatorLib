@@ -83,14 +83,33 @@ public class ComplexMath {
     private static double divideImaginaryUnits(ComplexNumber a, ComplexNumber b) {
         return ((-a.getRealUnit() * b.getImaginaryUnit() + a.getImaginaryUnit()* b.getRealUnit())/(Math.pow(b.getRealUnit(),2) + Math.pow(b.getImaginaryUnit(),2)));
     }
-
+    /**
+     * Returns the division of its arguments.
+     */
     public static ComplexNumber divide(ComplexNumber a, double b) {
         return ComplexNumber.fromValue(a.getRealUnit()/b, a.getImaginaryUnit()/b, ComplexNumber.BINOMIC);
     }
 
     //Root
-    public static ComplexNumber root(ComplexNumber a) {
-        return null;
+    public static ComplexNumber[] root(ComplexNumber a, int grade) {
+        return root(grade-1,grade,Math.pow(a.getRadius(), 1/grade), a.getAngle(),new ComplexNumber[grade]);
+    }
+
+    /**
+     *
+     * @param k
+     * @param radius The precalculated radius of the root
+     * @param angle
+     * @param result
+     * @return
+     */
+    private static ComplexNumber[] root(int k,int grade, double radius, double angle, ComplexNumber[] result) {
+        result[k] = ComplexNumber.fromValue(radius,getRootAngle(k,grade,angle),ComplexNumber.POLAR);
+        return (k == 0)? result : root(k-1,grade,radius,angle,result);
+    }
+
+    private static double getRootAngle(int k,int grade, double angle){
+        return (angle + 2 * Math.PI * k)/grade;
     }
 
     //public static ComplexNumber cbrt(ComplexNumber a) {}
