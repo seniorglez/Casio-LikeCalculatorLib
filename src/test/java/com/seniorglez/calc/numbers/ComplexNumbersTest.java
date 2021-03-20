@@ -9,11 +9,22 @@ import com.seniorglez.calc.lang.ComplexMath;
 public class ComplexNumbersTest {
 
     @Test
-    public void testgetAngle() { //3-4i to polar r=5 ang = -53,13
+    public void testGetRadius() { //3-4i to polar r=5 ang = -53,13
         ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
-        System.out.println(a.getRadius());
         assertTrue(a.getRadius() == 5.0);
 
+    }
+
+    @Test
+    public void testGetRawAngle() {
+        ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
+        assertTrue(a.getRawAngle()==-0.9272952180016122);
+    }
+
+    @Test
+    public void testGetAngle() {
+        ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
+        System.out.println(a.getAngle());//I have to check this hideous thing
     }
 
 }

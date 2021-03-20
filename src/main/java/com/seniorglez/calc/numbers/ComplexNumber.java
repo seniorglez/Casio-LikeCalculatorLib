@@ -84,7 +84,7 @@ public class ComplexNumber {
     }
 
     public double getRawAngle() {
-        return Math.atan(this.getImaginaryUnit()/this.getRealUnit());
+        return Math.atan(this.imaginaryUnit/this.realUnit);
     }
 
     public double getAngle() {
