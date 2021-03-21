@@ -61,7 +61,7 @@ public class ComplexNumber {
         return realUnit + " + " + imaginaryUnit + ("i");
     }
 
-    //Gettter and Setters
+    //Getter and Setters
 
     public double getRealUnit() {
         return this.realUnit;
