@@ -9,6 +9,13 @@ import com.seniorglez.calc.lang.ComplexMath;
 public class ComplexNumbersTest {
 
     @Test
+    public void testFromPolar(){
+        ComplexNumber a = ComplexNumber.fromValue(5,Math.toRadians(-53.13),ComplexNumber.POLAR );
+        System.out.println(a.getImaginaryUnit());
+        assertEquals(-4,a.getImaginaryUnit(),0.00001d);
+    }
+
+    @Test
     public void testGetRadius() { //3-4i to polar r=5 ang = -53,13
         ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
         assertTrue(a.getRadius() == 5.0);

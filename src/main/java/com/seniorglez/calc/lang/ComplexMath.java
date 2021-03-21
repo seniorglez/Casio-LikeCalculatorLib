@@ -90,15 +90,21 @@ public class ComplexMath {
         return ComplexNumber.fromValue(a.getRealUnit()/b, a.getImaginaryUnit()/b, ComplexNumber.BINOMIC);
     }
 
-    //Root
+    /**
+     * Returns an array of ComplexNumber which contains the nth roots of the given complex number.
+     * @param a The complex number.
+     * @param grade The grade of the roots
+     * @return an array of ComplexNumber which contains the nth roots of the given complex number.
+     */
     public static ComplexNumber[] root(ComplexNumber a, int grade) {
         return root(grade-1,grade,Math.pow(a.getRadius(), 1/grade), a.getAngle(),new ComplexNumber[grade]);
     }
 
     /**
+     * Returns an array which contains the nth roots of the given complex number.
      *
-     * @param k
-     * @param radius The precalculated radius of the root
+     * @param k A counter which have the root value minus one. (θ + 2πk)/n k = 0,1,2,..., n-1
+     * @param radius The precalculated radius of the root.
      * @param angle
      * @param result
      * @return
@@ -108,7 +114,7 @@ public class ComplexMath {
         return (k == 0)? result : root(k-1,grade,radius,angle,result);
     }
 
-    private static double getRootAngle(int k,int grade, double angle){
+    private static double getRootAngle(int k,int grade, double angle) { //(θ + 2πk)/n
         return (angle + 2 * Math.PI * k)/grade;
     }
 

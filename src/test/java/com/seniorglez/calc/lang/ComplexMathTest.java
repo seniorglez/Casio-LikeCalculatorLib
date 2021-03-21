@@ -34,7 +34,7 @@ public class ComplexMathTest {
     @Test
     public void testComplexNumberRoot() {
         ComplexNumber a = ComplexNumber.fromValue(3, -4, ComplexNumber.BINOMIC);
-        ComplexNumber[] results = ComplexMath.root(a,3);
+        ComplexNumber[] results = ComplexMath.root(a,2);
         ComplexNumber b = results[0];
         System.out.println(b.getRealUnit());
     }
